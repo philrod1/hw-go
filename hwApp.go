@@ -168,7 +168,7 @@ func (e *HWApp) sendSubscription(meid string) {
 }
 
 func (e *HWApp) xAppStartCB(d interface{}) {
-	xapp.Logger.Info("xApp ready call back received")
+	xapp.Logger.Info("xApp ready call back received from hwApp")
 
 	// get the list of all NBs
 	nbList := e.getnbList()
