@@ -24,6 +24,7 @@ import (
 	"gerrit.o-ran-sc.org/r/ric-plt/alarm-go.git/alarm"
 	"gerrit.o-ran-sc.org/r/ric-plt/xapp-frame/pkg/clientmodel"
 	"gerrit.o-ran-sc.org/r/ric-plt/xapp-frame/pkg/xapp"
+	"log"
 )
 
 type HWApp struct {
@@ -232,7 +233,7 @@ func (e *HWApp) Run() {
 	// reading configuration from config file
 	waitForSdl := xapp.Config.GetBool("db.waitForSdl")
 
-	xapp.Logger.Info("#### GOT A CONFIG VALUE waitForSdl = " + waitForSdl + " ####")
+	xapp.Logger.Info("#### GOT A CONFIG VALUE waitForSdl ####")
  
 	// start xapp
 	xapp.RunWithParams(e, waitForSdl)
@@ -243,7 +244,7 @@ func (e *HWApp) Run() {
 
 func main() {
 	// Defind metrics counter that the xapp provides
-	xapp.Logger.Info("#### HW-GO MAIN ####")
+	log.Println("#### HW-GO MAIN ####")
 	metrics := []xapp.CounterOpts{
 		{
 			Name: "RICIndicationRx",
