@@ -227,7 +227,7 @@ func (e *HWApp) Run() {
 
 	// reading configuration from config file
 	waitForSdl := xapp.Config.GetBool("db.waitForSdl")
-
+ 
 	// start xapp
 	xapp.RunWithParams(e, waitForSdl)
 
@@ -235,7 +235,7 @@ func (e *HWApp) Run() {
 
 func main() {
 	// Defind metrics counter that the xapp provides
-	xApp.Logger.Info("HW-GO MAIN")
+	xapp.Logger.Info("HW-GO MAIN")
 	metrics := []xapp.CounterOpts{
 		{
 			Name: "RICIndicationRx",
