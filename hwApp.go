@@ -24,7 +24,7 @@ import (
 	"gerrit.o-ran-sc.org/r/ric-plt/alarm-go.git/alarm"
 	"gerrit.o-ran-sc.org/r/ric-plt/xapp-frame/pkg/clientmodel"
 	"gerrit.o-ran-sc.org/r/ric-plt/xapp-frame/pkg/xapp"
-	"log"
+	"fmt"
 )
 
 type HWApp struct {
@@ -244,7 +244,7 @@ func (e *HWApp) Run() {
 
 func main() {
 	// Defind metrics counter that the xapp provides
-	log.Println("#### HW-GO MAIN ####")
+	fmt.Println("#### HW-GO MAIN ####")
 	metrics := []xapp.CounterOpts{
 		{
 			Name: "RICIndicationRx",
