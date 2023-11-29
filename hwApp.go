@@ -235,6 +235,7 @@ func (e *HWApp) Run() {
 
 func main() {
 	// Defind metrics counter that the xapp provides
+	xApp.Logger.Info("HW-GO MAIN")
 	metrics := []xapp.CounterOpts{
 		{
 			Name: "RICIndicationRx",
