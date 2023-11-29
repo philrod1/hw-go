@@ -215,27 +215,35 @@ func (e *HWApp) Consume(msg *xapp.RMRParams) (err error) {
 }
 
 func (e *HWApp) Run() {
+	xapp.Logger.Info("#### IN RUN ####")
 
 	// set MDC
 	xapp.Logger.SetMdc("HWApp", "0.0.1")
+	xapp.Logger.Info("#### AFTER SET MDC ####")
 
 	// set config change listener
 	xapp.AddConfigChangeListener(e.ConfigChangeHandler)
+	xapp.Logger.Info("#### AFTER ADD CONFIG CHANGE LISTENER ####")
 
 	// register callback after xapp ready
 	xapp.SetReadyCB(e.xAppStartCB, true)
+	xapp.Logger.Info("#### AFTER APP START CALLBACK ####")
 
 	// reading configuration from config file
 	waitForSdl := xapp.Config.GetBool("db.waitForSdl")
+
+	xapp.Logger.Info("#### GOT A CONFIG VALUE waitForSdl = " + waitForSdl + " ####")
  
 	// start xapp
 	xapp.RunWithParams(e, waitForSdl)
+
+	xapp.Logger.Info("#### AFTER RUN WITH PARAMS ####")
 
 }
 
 func main() {
 	// Defind metrics counter that the xapp provides
-	xapp.Logger.Info("HW-GO MAIN")
+	xapp.Logger.Info("#### HW-GO MAIN ####")
 	metrics := []xapp.CounterOpts{
 		{
 			Name: "RICIndicationRx",
