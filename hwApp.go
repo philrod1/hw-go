@@ -144,6 +144,8 @@ func (e *HWApp) sendSubscription(meid string) {
 			},
 		}),
 	}
+    fmt.Println("Subscription Parameters")
+	fmt.Println(subscriptionParams)
 
 	b, err := json.MarshalIndent(subscriptionParams, "", "  ")
 
