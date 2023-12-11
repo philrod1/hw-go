@@ -97,6 +97,7 @@ func (e *HWApp) getGnbList() ([]*xapp.RNIBNbIdentity, error) {
 	}
 
 	xapp.Logger.Info("List of connected gNBs :")
+	fmt.Println("HERE!")
 	for index, gnb := range gnbs {
 		xapp.Logger.Info("%d. gnbid : %s", index+1, gnb.InventoryName)
 	}
