@@ -90,6 +90,7 @@ func (e *HWApp) getEnbList() ([]*xapp.RNIBNbIdentity, error) {
 
 func (e *HWApp) getGnbList() ([]*xapp.RNIBNbIdentity, error) {
 	gnbs, err := xapp.Rnib.GetListGnbIds()
+	fmt.Println(gnbs)
 
 	if err != nil {
 		xapp.Logger.Error("err: %s", err)
